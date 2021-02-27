@@ -28,11 +28,13 @@ export class ActionSheetPage  implements OnInit {
   async presentActionSheet() {
     const actionSheet = await this._actionSheetController.create({
       header: 'Albums',
+      backdropDismiss: false, // Esto hace que el usuario se vea forzado a tener que elegir una opción
       // cssClass: 'my-custom-class', 
         buttons: [{
         text: 'Delete',
         role: 'destructive',
         icon: 'trash-outline',
+        cssClass: 'colorChanged',
         handler: () => {
           console.log('Delete clicked');
         }
