@@ -1,0 +1,26 @@
+<app-header titulo="Checkbox"></app-header>
+
+<ion-content >
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Checkbox start</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Checkbox end</ion-label>
+      <ion-checkbox slot="end"></ion-checkbox>
+    </ion-item>
+
+    <ion-item *ngFor="let item of data">
+      <ion-label>{{item.name}}</ion-label>
+      <!-- Una forma alternativa de controlar el estado del Checkbox es usar el ngModel -->
+      <ion-checkbox [(ngModel)]="item.selected" slot="start" checked="{{item.selected}}" color="{{item.name}}" ></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <!-- Default Checkbox -->
+
+  <ion-button (click)="onClick()" expand="block">
+    Print data
+  </ion-button>
+</ion-content>

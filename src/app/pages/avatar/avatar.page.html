@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    <ion-title>avatar</ion-title>
+
+    <ion-buttons slot="end">
+        <ion-avatar>
+            <img src="../../assets/stan-lee.jpg" />
+            <!-- Si queremos cargar la imagen mediante carga perezosa hacemos lo siguiente: -->
+            <!-- <ion-img src="../../assets/stan-lee.jpg"></ion-img>  -->
+        </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br>
+    <ion-title>Chip avatar</ion-title>
+    <ion-chip color="primary" outline="true" style="margin-left:20px">
+        <ion-avatar>
+            <img src="../../assets/stan-lee.jpg" />
+        </ion-avatar>
+        <ion-label>Default</ion-label>
+    </ion-chip>
+    <br>
+    <br>
+    <ion-title>List item with avatar</ion-title>
+    <ion-item>
+        <ion-avatar slot="end">
+            <img src="../../assets/stan-lee.jpg" />
+        </ion-avatar>
+        <ion-label>Stan Lee</ion-label>
+    </ion-item>
+
+</ion-content>
