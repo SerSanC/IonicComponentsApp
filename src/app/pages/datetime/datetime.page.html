@@ -1,0 +1,46 @@
+<app-header titulo="DateTime"></app-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Data</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Complete date</ion-label>
+      <ion-datetime [value]="dateBirthday.toISOString()" display-format="YYYY-MM-DD" (ionChange)=changeDate($event)></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date and Time</ion-label>
+      <ion-datetime [value]="dateBirthday.toISOString()" display-format="YYYY-MM-DDTHH:mm"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hour and Minute</ion-label>
+      <ion-datetime [value]="dateBirthday.toISOString()" display-format="HH:mm"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hour, Minute, Second</ion-label>
+      <ion-datetime [value]="dateBirthday.toISOString()" display-format="HH:mm:ss"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Custom Options</ion-label>
+      <ion-datetime [pickerOptions]="customPickerOptions" placeholder="Custom Options" displayFormat="YYYY" min="1981" max="2002"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">MMMM YY</ion-label>
+      <ion-datetime displayFormat="MMMM YY" min="1989-06-04" max="2004-08-23" value="1994-12-15T13:47:20.789"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Min and Max Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+      <ion-datetime value="1995-04-15" min="1990-02" max="2000"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YY"
+        monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"></ion-datetime>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
