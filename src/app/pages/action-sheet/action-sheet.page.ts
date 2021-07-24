@@ -6,35 +6,26 @@ import { ActionSheetController } from '@ionic/angular';
   templateUrl: './action-sheet.page.html',
   styleUrls: ['./action-sheet.page.scss'],
 })
+export class ActionSheetPage implements OnInit {
 
-/**
- * El action sheet lo que hace es sacar un mensaje emergente debajo , para ello tiene que ser asincrono
- * por eso la clase async se define en el constructor del metodo para indicar que este metodo va a ser asincrono
- * además usamos el await para asegurarnos de que los eventos se produzcan en el orden de succesión correcta.
- * 
- * Una vez pulsado en un elemento se lanza el handler con la acción que deseemos realizar.
- */
-export class ActionSheetPage  implements OnInit {
-
-  constructor(public _actionSheetController: ActionSheetController) {}
+  constructor( private actionSheetCtrl: ActionSheetController ) { }
 
   ngOnInit() {
   }
 
-  onClick(){
-    this.presentActionSheet()
+  onClick() {
+    this.presentActionSheet();
   }
 
   async presentActionSheet() {
-    const actionSheet = await this._actionSheetController.create({
-      header: 'Albums',
-      backdropDismiss: false, // Esto hace que el usuario se vea forzado a tener que elegir una opción
-      // cssClass: 'my-custom-class', 
-        buttons: [{
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Albumes',
+      backdropDismiss: false,
+      buttons: [{
         text: 'Delete',
         role: 'destructive',
         icon: 'trash-outline',
-        cssClass: 'colorChanged',
+        cssClass: 'rojo',
         handler: () => {
           console.log('Delete clicked');
         }
@@ -58,8 +49,8 @@ export class ActionSheetPage  implements OnInit {
         }
       }, {
         text: 'Cancel',
-        icon: 'close',
-        role: 'cancel-outline',
+        icon: 'close-outline',
+        role: 'cancel',
         handler: () => {
           console.log('Cancel clicked');
         }
@@ -67,4 +58,5 @@ export class ActionSheetPage  implements OnInit {
     });
     await actionSheet.present();
   }
+
 }

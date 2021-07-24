@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FabPageRoutingModule } from './fab-routing.module';
 
 import { FabPage } from './fab.page';
-import { HeaderModule } from '../../components/header/header.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { HeaderModule } from '../../components/header/header.module';
     FormsModule,
     IonicModule,
     FabPageRoutingModule,
-    HeaderModule,
+    ComponentsModule
   ],
   declarations: [FabPage]
 })

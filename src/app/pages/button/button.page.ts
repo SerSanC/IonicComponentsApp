@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.page.scss'],
 })
 export class ButtonPage implements OnInit {
-  favorite : boolean = false
+
+  favorito: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
-  onClick(){
-    console.log("clicked")
-    this.favorite = !this.favorite //cambiamos el valor del botón
+
+  onClick() {
+    this.favorito = !this.favorito;
   }
+
 }
